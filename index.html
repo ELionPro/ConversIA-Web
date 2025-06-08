@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solutions | Smart Websites with Intelligent Chatbots</title>
+    <title>ConversIA | AI Automation Solutions for Montreal Businesses</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,23 +15,23 @@
             font-family: 'Space Grotesk', sans-serif;
         }
         .ai-accent {
-            color: #00D4FF;
+            color: #6366F1;
         }
         .bg-ai-accent {
-            background-color: #00D4FF;
+            background-color: #6366F1;
         }
         .border-ai-accent {
-            border-color: #00D4FF;
+            border-color: #6366F1;
         }
         .hover-ai:hover {
-            color: #00D4FF;
+            color: #6366F1;
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,212,255,0.15);
+            box-shadow: 0 10px 25px rgba(99,102,241,0.15);
         }
         .hero-image {
-            background: linear-gradient(135deg, #0F0F23 0%, #1A1A2E 50%, #16213E 100%);
+            background: linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);
             position: relative;
             overflow: hidden;
         }
@@ -42,66 +42,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%2300D4FF" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%2300D4FF" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/></circle><circle cx="60" cy="70" r="1" fill="%2300D4FF" opacity="0.4"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle></svg>') repeat;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%236366F1" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="80" cy="30" r="1.5" fill="%236366F1" opacity="0.5"><animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/></circle><circle cx="60" cy="70" r="1" fill="%236366F1" opacity="0.4"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" repeatCount="indefinite"/></circle></svg>') repeat;
             opacity: 0.6;
         }
         .glow-effect {
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
         }
         .gradient-text {
-            background: linear-gradient(135deg, #00D4FF 0%, #0099CC 100%);
+            background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-        
-        /* Carousel Styles */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-        }
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-slide {
-            min-width: 100%;
-            padding: 0 1rem;
-        }
-        @media (min-width: 768px) {
-            .carousel-slide {
-                min-width: 50%;
-            }
-        }
-        @media (min-width: 1024px) {
-            .carousel-slide {
-                min-width: 33.333%;
-            }
-        }
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 212, 255, 0.9);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        .carousel-nav:hover {
-            background: #00D4FF;
-            transform: translateY(-50%) scale(1.1);
-        }
-        .carousel-nav.prev {
-            left: 10px;
-        }
-        .carousel-nav.next {
-            right: 10px;
         }
         .floating-shapes {
             position: absolute;
@@ -122,6 +73,122 @@
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(180deg); }
         }
+
+        /* Chatbot Styles */
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+        }
+        
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #6366F1;
+            border-radius: 50%;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        #chatbot-toggle:hover {
+            background: #5B5BD6;
+            transform: scale(1.1);
+        }
+        
+        #chatbot-header {
+            background: #6366F1;
+            color: white;
+            padding: 15px;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        #chatbot-input-container {
+            padding: 15px;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            word-wrap: break-word;
+        }
+        
+        .message.user {
+            background: #6366F1;
+            color: white;
+            align-self: flex-end;
+        }
+        
+        .message.bot {
+            background: #f3f4f6;
+            color: #374151;
+            align-self: flex-start;
+        }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #6366F1;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -129,15 +196,15 @@
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <i class="fas fa-brain text-2xl ai-accent mr-2"></i>
-                <a href="#" class="heading-font text-xl font-bold gradient-text">AI Solutions</a>
+                <i class="fas fa-robot text-2xl ai-accent mr-2"></i>
+                <a href="#" class="heading-font text-xl font-bold gradient-text">ConversIA</a>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="hover-ai transition duration-300" data-en="Home" data-fr="Accueil">Home</a>
                 <a href="#services" class="hover-ai transition duration-300" data-en="Services" data-fr="Services">Services</a>
-                <a href="#process" class="hover-ai transition duration-300" data-en="Process" data-fr="Processus">Process</a>
-                <a href="#contact" class="hover-ai transition duration-300" data-en="Contact" data-fr="Contact">Contact</a>
                 <a href="#about" class="hover-ai transition duration-300" data-en="About" data-fr="À propos">About</a>
+                <a href="#contact" class="hover-ai transition duration-300" data-en="Contact" data-fr="Contact">Contact</a>
+                <button onclick="openBookingModal()" class="bg-ai-accent text-white px-4 py-2 rounded-full hover:bg-indigo-600 transition duration-300" data-en="Book Consultation" data-fr="Réserver consultation">Book Consultation</button>
                 <div class="flex ml-4">
                     <button id="lang-en" class="lang-toggle bg-ai-accent text-white px-3 py-1 rounded-l-full">EN</button>
                     <button id="lang-fr" class="lang-toggle bg-gray-200 px-3 py-1 rounded-r-full">FR</button>
@@ -157,9 +224,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
             <a href="#home" class="block py-2 hover-ai transition duration-300" data-en="Home" data-fr="Accueil">Home</a>
             <a href="#services" class="block py-2 hover-ai transition duration-300" data-en="Services" data-fr="Services">Services</a>
-            <a href="#process" class="block py-2 hover-ai transition duration-300" data-en="Process" data-fr="Processus">Process</a>
-            <a href="#contact" class="block py-2 hover-ai transition duration-300" data-en="Contact" data-fr="Contact">Contact</a>
             <a href="#about" class="block py-2 hover-ai transition duration-300" data-en="About" data-fr="À propos">About</a>
+            <a href="#contact" class="block py-2 hover-ai transition duration-300" data-en="Contact" data-fr="Contact">Contact</a>
+            <button onclick="openBookingModal()" class="block w-full text-left py-2 hover-ai transition duration-300" data-en="Book Consultation" data-fr="Réserver consultation">Book Consultation</button>
         </div>
     </nav>
 
@@ -172,15 +239,15 @@
         </div>
         <div class="container mx-auto px-4 text-center relative z-10">
             <h1 class="heading-font text-4xl md:text-6xl font-bold mb-4">
-                <span class="gradient-text" data-en="AI Solutions" data-fr="Solutions IA">AI Solutions</span>
+                <span class="gradient-text" data-en="ConversIA" data-fr="ConversIA">ConversIA</span>
             </h1>
-            <p class="text-xl md:text-2xl mb-8" data-en="Smart Websites with Intelligent Chatbots" data-fr="Sites Web intelligents avec chatbots IA">Smart Websites with Intelligent Chatbots</p>
-            <p class="max-w-2xl mx-auto text-lg mb-10" data-en="Transform your business with custom websites powered by AI chatbots. We create intelligent digital experiences that engage customers 24/7 and drive conversions." data-fr="Transformez votre entreprise avec des sites Web personnalisés alimentés par des chatbots IA. Nous créons des expériences numériques intelligentes qui engagent les clients 24h/24 et stimulent les conversions.">Transform your business with custom websites powered by AI chatbots. We create intelligent digital experiences that engage customers 24/7 and drive conversions.</p>
+            <p class="text-xl md:text-2xl mb-8" data-en="AI Automation Solutions for Montreal Businesses" data-fr="Solutions d'automatisation IA pour les entreprises de Montréal">AI Automation Solutions for Montreal Businesses</p>
+            <p class="max-w-2xl mx-auto text-lg mb-10" data-en="Cut operating costs and maximize efficiency with our cost-effective AI solutions. We empower local small and medium-sized businesses with affordable, powerful AI tools and provide full guidance every step of the way." data-fr="Réduisez les coûts d'exploitation et maximisez l'efficacité avec nos solutions IA rentables. Nous donnons aux petites et moyennes entreprises locales les moyens d'utiliser des outils IA abordables et puissants, en fournissant des conseils complets à chaque étape.">Cut operating costs and maximize efficiency with our cost-effective AI solutions. We empower local small and medium-sized businesses with affordable, powerful AI tools and provide full guidance every step of the way.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#contact" class="bg-ai-accent hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition duration-300 glow-effect" data-en="Start Your Project" data-fr="Démarrer votre projet">
-                    <i class="fas fa-rocket mr-2"></i> <span data-en="Start Your Project" data-fr="Démarrer votre projet">Start Your Project</span>
-                </a>
-                <a href="#services" class="bg-transparent hover:bg-white hover:text-gray-800 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300" data-en="View Services" data-fr="Voir les services">
+                <button onclick="openBookingModal()" class="bg-ai-accent hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 glow-effect">
+                    <i class="fas fa-calendar-alt mr-2"></i> <span data-en="Book Free Consultation" data-fr="Réserver consultation gratuite">Book Free Consultation</span>
+                </button>
+                <a href="#services" class="bg-transparent hover:bg-white hover:text-gray-800 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">
                     <i class="fas fa-cogs mr-2"></i> <span data-en="View Services" data-fr="Voir les services">View Services</span>
                 </a>
             </div>
@@ -191,110 +258,167 @@
     <section id="services" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Our AI-Powered Services" data-fr="Nos services alimentés par l'IA">Our AI-Powered Services</h2>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Our AI Automation Services" data-fr="Nos services d'automatisation IA">Our AI Automation Services</h2>
                 <div class="w-20 h-1 bg-ai-accent mx-auto"></div>
-                <p class="text-gray-600 mt-4" data-en="Cutting-edge solutions tailored to your business needs" data-fr="Solutions de pointe adaptées aux besoins de votre entreprise">Cutting-edge solutions tailored to your business needs</p>
+                <p class="text-gray-600 mt-4" data-en="Practical AI solutions designed for businesses without technical expertise" data-fr="Solutions IA pratiques conçues pour les entreprises sans expertise technique">Practical AI solutions designed for businesses without technical expertise</p>
             </div>
             
+            <!-- Flagship Products -->
+            <div class="mb-16">
+                <h3 class="heading-font text-2xl font-bold text-center mb-8" data-en="Flagship AI Assistants" data-fr="Assistants IA phares">Flagship AI Assistants</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                        <div class="ai-accent text-3xl mb-4">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 class="heading-font text-lg font-bold mb-2" data-en="AI Receptionist" data-fr="Réceptionniste IA">AI Receptionist</h4>
+                        <p class="text-gray-600 text-sm" data-en="24/7 phone answering and call routing with intelligent conversation capabilities" data-fr="Réponse téléphonique 24h/24 et routage d'appels avec capacités de conversation intelligentes">24/7 phone answering and call routing with intelligent conversation capabilities</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                        <div class="ai-accent text-3xl mb-4">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="heading-font text-lg font-bold mb-2" data-en="AI Sales Assistant" data-fr="Assistant de vente IA">AI Sales Assistant</h4>
+                        <p class="text-gray-600 text-sm" data-en="Qualify leads, answer product questions, and guide customers through your sales process" data-fr="Qualifie les prospects, répond aux questions sur les produits et guide les clients dans votre processus de vente">Qualify leads, answer product questions, and guide customers through your sales process</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                        <div class="ai-accent text-3xl mb-4">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="heading-font text-lg font-bold mb-2" data-en="AI Customer Care" data-fr="Service client IA">AI Customer Care</h4>
+                        <p class="text-gray-600 text-sm" data-en="Handle support tickets, FAQs, and customer inquiries across multiple channels" data-fr="Gère les tickets de support, FAQ et demandes clients sur plusieurs canaux">Handle support tickets, FAQs, and customer inquiries across multiple channels</p>
+                    </div>
+                    
+                    <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                        <div class="ai-accent text-3xl mb-4">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h4 class="heading-font text-lg font-bold mb-2" data-en="AI Booking Assistant" data-fr="Assistant de réservation IA">AI Booking Assistant</h4>
+                        <p class="text-gray-600 text-sm" data-en="Automated scheduling via chatbot and email, integrated with Instagram, WhatsApp, Facebook" data-fr="Planification automatisée via chatbot et email, intégrée à Instagram, WhatsApp, Facebook">Automated scheduling via chatbot and email, integrated with Instagram, WhatsApp, Facebook</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Services -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="Custom Website Design" data-fr="Conception de site Web personnalisé">Custom Website Design</h3>
-                        <p class="text-gray-600" data-en="Modern, responsive websites tailored to your brand with cutting-edge design and seamless user experience." data-fr="Sites Web modernes et adaptatifs personnalisés à votre marque avec un design de pointe et une expérience utilisateur fluide.">Modern, responsive websites tailored to your brand with cutting-edge design and seamless user experience.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-robot"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="AI Agents" data-fr="Agents IA">AI Agents</h3>
+                    <p class="text-gray-600" data-en="Intelligent virtual assistants that handle customer interactions, lead qualification, and routine business tasks automatically." data-fr="Assistants virtuels intelligents qui gèrent les interactions clients, la qualification des prospects et les tâches commerciales routinières automatiquement.">Intelligent virtual assistants that handle customer interactions, lead qualification, and routine business tasks automatically.</p>
                 </div>
                 
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="AI Chatbot Integration" data-fr="Intégration de chatbot IA">AI Chatbot Integration</h3>
-                        <p class="text-gray-600" data-en="Intelligent chatbots that understand context, learn from interactions, and provide personalized customer support 24/7." data-fr="Chatbots intelligents qui comprennent le contexte, apprennent des interactions et fournissent un support client personnalisé 24h/24.">Intelligent chatbots that understand context, learn from interactions, and provide personalized customer support 24/7.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-cogs"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Automations" data-fr="Automatisations">Automations</h3>
+                    <p class="text-gray-600" data-en="Streamline repetitive processes, from data entry to customer follow-ups, saving hours of manual work daily." data-fr="Rationalisez les processus répétitifs, de la saisie de données au suivi client, économisant des heures de travail manuel quotidien.">Streamline repetitive processes, from data entry to customer follow-ups, saving hours of manual work daily.</p>
                 </div>
                 
-                <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="E-commerce Solutions" data-fr="Solutions e-commerce">E-commerce Solutions</h3>
-                        <p class="text-gray-600" data-en="Smart online stores with AI-powered product recommendations, inventory management, and sales optimization." data-fr="Boutiques en ligne intelligentes avec recommandations de produits alimentées par l'IA, gestion d'inventaire et optimisation des ventes.">Smart online stores with AI-powered product recommendations, inventory management, and sales optimization.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-plug"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Integrations" data-fr="Intégrations">Integrations</h3>
+                    <p class="text-gray-600" data-en="Connect your existing tools and platforms seamlessly, creating a unified workflow that works with what you already have." data-fr="Connectez vos outils et plateformes existants de manière transparente, créant un flux de travail unifié qui fonctionne avec ce que vous avez déjà.">Connect your existing tools and platforms seamlessly, creating a unified workflow that works with what you already have.</p>
                 </div>
                 
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="Analytics & Insights" data-fr="Analyses et insights">Analytics & Insights</h3>
-                        <p class="text-gray-600" data-en="Advanced analytics powered by AI to track user behavior, predict trends, and optimize your digital strategy." data-fr="Analyses avancées alimentées par l'IA pour suivre le comportement des utilisateurs, prédire les tendances et optimiser votre stratégie numérique.">Advanced analytics powered by AI to track user behavior, predict trends, and optimize your digital strategy.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-globe"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Web Platforms" data-fr="Plateformes web">Web Platforms</h3>
+                    <p class="text-gray-600" data-en="Modern, responsive websites with integrated AI features that convert visitors into customers while you sleep." data-fr="Sites web modernes et adaptatifs avec fonctionnalités IA intégrées qui convertissent les visiteurs en clients pendant que vous dormez.">Modern, responsive websites with integrated AI features that convert visitors into customers while you sleep.</p>
                 </div>
                 
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="Mobile Optimization" data-fr="Optimisation mobile">Mobile Optimization</h3>
-                        <p class="text-gray-600" data-en="Fully responsive designs optimized for all devices with fast loading times and intuitive mobile experiences." data-fr="Conceptions entièrement adaptatives optimisées pour tous les appareils avec des temps de chargement rapides et des expériences mobiles intuitives.">Fully responsive designs optimized for all devices with fast loading times and intuitive mobile experiences.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-search"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Web Consulting" data-fr="Conseil web">Web Consulting</h3>
+                    <p class="text-gray-600" data-en="Strategic guidance to optimize your online presence and digital marketing efforts for maximum ROI." data-fr="Conseils stratégiques pour optimiser votre présence en ligne et vos efforts de marketing numérique pour un ROI maximal.">Strategic guidance to optimize your online presence and digital marketing efforts for maximum ROI.</p>
                 </div>
                 
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-lg shadow-lg overflow-hidden transition duration-300 border-t-4 border-ai-accent">
-                    <div class="p-6">
-                        <div class="ai-accent text-3xl mb-4">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3 class="heading-font text-xl font-bold mb-2" data-en="Security & Maintenance" data-fr="Sécurité et maintenance">Security & Maintenance</h3>
-                        <p class="text-gray-600" data-en="Enterprise-grade security protocols with ongoing maintenance, updates, and 24/7 monitoring for peace of mind." data-fr="Protocoles de sécurité de niveau entreprise avec maintenance continue, mises à jour et surveillance 24h/24 pour votre tranquillité d'esprit.">Enterprise-grade security protocols with ongoing maintenance, updates, and 24/7 monitoring for peace of mind.</p>
+                <div class="service-card bg-white rounded-lg shadow-lg p-6 transition duration-300 border-t-4 border-ai-accent">
+                    <div class="ai-accent text-3xl mb-4">
+                        <i class="fas fa-wrench"></i>
                     </div>
+                    <h3 class="heading-font text-xl font-bold mb-2" data-en="AI Consulting & Maintenance" data-fr="Conseil et maintenance IA">AI Consulting & Maintenance</h3>
+                    <p class="text-gray-600" data-en="Ongoing support, updates, and optimization to ensure your AI solutions continue delivering results as your business grows." data-fr="Support continu, mises à jour et optimisation pour s'assurer que vos solutions IA continuent de livrer des résultats à mesure que votre entreprise grandit.">Ongoing support, updates, and optimization to ensure your AI solutions continue delivering results as your business grows.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="process" class="py-16 bg-gray-100">
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Our Development Process" data-fr="Notre processus de développement">Our Development Process</h2>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Why Choose ConversIA?" data-fr="Pourquoi choisir ConversIA ?">Why Choose ConversIA?</h2>
                 <div class="w-20 h-1 bg-ai-accent mx-auto"></div>
-                <p class="text-gray-600 mt-4" data-en="From concept to launch, we guide you every step of the way" data-fr="Du concept au lancement, nous vous guidons à chaque étape">From concept to launch, we guide you every step of the way</p>
+                <p class="text-gray-600 mt-4" data-en="Local expertise, personalized support, competitive pricing" data-fr="Expertise locale, support personnalisé, prix compétitifs">Local expertise, personalized support, competitive pricing</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="bg-ai-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">1</div>
-                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Discovery" data-fr="Découverte">Discovery</h3>
-                    <p class="text-gray-600" data-en="We analyze your business needs, target audience, and goals to create a tailored strategy." data-fr="Nous analysons les besoins de votre entreprise, votre public cible et vos objectifs pour créer une stratégie sur mesure.">We analyze your business needs, target audience, and goals to create a tailored strategy.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="heading-font text-2xl font-bold mb-6" data-en="Our Mission" data-fr="Notre mission">Our Mission</h3>
+                    <p class="text-gray-700 mb-6" data-en="ConversIA empowers local small and medium-sized businesses in Montreal and Quebec with affordable, powerful AI and web tools. We help businesses grow, save costs, and modernize their operations with practical AI automation solutions." data-fr="ConversIA donne aux petites et moyennes entreprises locales de Montréal et du Québec les moyens d'utiliser des outils IA et web abordables et puissants. Nous aidons les entreprises à croître, économiser des coûts et moderniser leurs opérations avec des solutions d'automatisation IA pratiques.">ConversIA empowers local small and medium-sized businesses in Montreal and Quebec with affordable, powerful AI and web tools. We help businesses grow, save costs, and modernize their operations with practical AI automation solutions.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt ai-accent mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold" data-en="Local & Community-Driven" data-fr="Local et communautaire">Local & Community-Driven</h4>
+                                <p class="text-gray-600" data-en="Unlike big, faceless companies, we're a local Montreal business supporting other local businesses with personalized attention." data-fr="Contrairement aux grandes entreprises impersonnelles, nous sommes une entreprise locale de Montréal qui soutient d'autres entreprises locales avec une attention personnalisée.">Unlike big, faceless companies, we're a local Montreal business supporting other local businesses with personalized attention.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-handshake ai-accent mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold" data-en="Full A-Z Support" data-fr="Support complet A-Z">Full A-Z Support</h4>
+                                <p class="text-gray-600" data-en="We provide complete guidance and become a trusted partner in your journey, offering 24/7 support and personalized service." data-fr="Nous fournissons des conseils complets et devenons un partenaire de confiance dans votre parcours, offrant un support 24h/24 et un service personnalisé.">We provide complete guidance and become a trusted partner in your journey, offering 24/7 support and personalized service.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-dollar-sign ai-accent mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold" data-en="Competitive Pricing" data-fr="Prix compétitifs">Competitive Pricing</h4>
+                                <p class="text-gray-600" data-en="Cost-effective solutions designed for SMBs, with pricing that's significantly more affordable than large tech companies." data-fr="Solutions rentables conçues pour les PME, avec des prix nettement plus abordables que les grandes entreprises technologiques.">Cost-effective solutions designed for SMBs, with pricing that's significantly more affordable than large tech companies.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="bg-ai-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">2</div>
-                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Design" data-fr="Conception">Design</h3>
-                    <p class="text-gray-600" data-en="Our designers create stunning mockups and user experience flows that align with your brand identity." data-fr="Nos concepteurs créent des maquettes époustouflantes et des flux d'expérience utilisateur qui s'alignent sur votre identité de marque.">Our designers create stunning mockups and user experience flows that align with your brand identity.</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-ai-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">3</div>
-                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Development" data-fr="Développement">Development</h3>
-                    <p class="text-gray-600" data-en="We build your website with cutting-edge technology and integrate intelligent AI chatbots." data-fr="Nous construisons votre site Web avec une technologie de pointe et intégrons des chatbots IA intelligents.">We build your website with cutting-edge technology and integrate intelligent AI chatbots.</p>
-                </div>
-                <div class="text-center">
-                    <div class="bg-ai-accent text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">4</div>
-                    <h3 class="heading-font text-xl font-bold mb-2" data-en="Launch" data-fr="Lancement">Launch</h3>
-                    <p class="text-gray-600" data-en="We deploy your website and provide ongoing support to ensure optimal performance and growth." data-fr="Nous déployons votre site Web et fournissons un support continu pour assurer des performances optimales et la croissance.">We deploy your website and provide ongoing support to ensure optimal performance and growth.</p>
+                
+                <div class="bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="heading-font text-2xl font-bold mb-6 text-center" data-en="Perfect For" data-fr="Parfait pour">Perfect For</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle ai-accent mr-3"></i>
+                            <span data-en="Businesses with little to no tech experience" data-fr="Entreprises avec peu ou pas d'expérience technologique">Businesses with little to no tech experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle ai-accent mr-3"></i>
+                            <span data-en="Local SMBs across various sectors" data-fr="PME locales de divers secteurs">Local SMBs across various sectors</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle ai-accent mr-3"></i>
+                            <span data-en="Montreal & Quebec region businesses" data-fr="Entreprises de la région de Montréal et du Québec">Montreal & Quebec region businesses</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle ai-accent mr-3"></i>
+                            <span data-en="Companies seeking to optimize further" data-fr="Entreprises cherchant à optimiser davantage">Companies seeking to optimize further</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle ai-accent mr-3"></i>
+                            <span data-en="Businesses wanting to cut operating costs" data-fr="Entreprises voulant réduire les coûts d'exploitation">Businesses wanting to cut operating costs</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -304,86 +428,6 @@
     <section id="contact" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Let's Build Something Amazing" data-fr="Construisons quelque chose d'incroyable">Let's Build Something Amazing</h2>
+                <h2 class="heading-font text-3xl md:text-4xl font-bold mb-4" data-en="Let's Transform Your Business" data-fr="Transformons votre entreprise">Let's Transform Your Business</h2>
                 <div class="w-20 h-1 bg-ai-accent mx-auto"></div>
-                <p class="text-gray-600 mt-4" data-en="Ready to transform your digital presence? Get in touch with our AI experts." data-fr="Prêt à transformer votre présence numérique ? Contactez nos experts en IA.">Ready to transform your digital presence? Get in touch with our AI experts.</p>
-            </div>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="heading-font text-2xl font-bold mb-6" data-en="Contact Information" data-fr="Informations de contact">Contact Information</h3>
-                    <div class="bg-gray-50 rounded-lg shadow-md p-6 mb-8">
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-envelope ai-accent mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold" data-en="Email" data-fr="Courriel">Email</h4>
-                                <a href="mailto:contact@aisolutions.com" class="text-gray-600 hover-ai transition duration-300">contact@aisolutions.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start mb-4">
-                            <i class="fas fa-phone ai-accent mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold" data-en="Phone" data-fr="Téléphone">Phone</h4>
-                                <a href="tel:+15551234567" class="text-gray-600 hover-ai transition duration-300">+1 (555) 123-4567</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-clock ai-accent mt-1 mr-4"></i>
-                            <div>
-                                <h4 class="font-bold" data-en="Response Time" data-fr="Temps de réponse">Response Time</h4>
-                                <p class="text-gray-600" data-en="Within 24 hours" data-fr="Dans les 24 heures">Within 24 hours</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="mailto:contact@aisolutions.com" class="bg-ai-accent hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition duration-300 text-center glow-effect">
-                            <i class="fas fa-envelope mr-2"></i> <span data-en="Email Us" data-fr="Nous contacter">Email Us</span>
-                        </a>
-                        <a href="tel:+15551234567" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 text-center">
-                            <i class="fas fa-phone mr-2"></i> <span data-en="Call Now" data-fr="Appeler maintenant">Call Now</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <h3 class="heading-font text-2xl font-bold mb-6" data-en="Project Inquiry" data-fr="Demande de projet">Project Inquiry</h3>
-                    <div class="bg-gray-50 rounded-lg shadow-md p-6">
-                        <form id="contactForm">
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 font-medium mb-2" data-en="Name" data-fr="Nom">Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-accent" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-medium mb-2" data-en="Email" data-fr="Courriel">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-accent" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="company" class="block text-gray-700 font-medium mb-2" data-en="Company" data-fr="Entreprise">Company</label>
-                                <input type="text" id="company" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-accent">
-                            </div>
-                            <div class="mb-4">
-                                <label for="service" class="block text-gray-700 font-medium mb-2" data-en="Service Needed" data-fr="Service requis">Service Needed</label>
-                                <select id="service" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-accent">
-                                    <option value="" data-en="Select a service" data-fr="Sélectionner un service">Select a service</option>
-                                    <option value="website" data-en="Custom Website Design" data-fr="Conception de site Web personnalisé">Custom Website Design</option>
-                                    <option value="chatbot" data-en="AI Chatbot Integration" data-fr="Intégration de chatbot IA">AI Chatbot Integration</option>
-                                    <option value="ecommerce" data-en="E-commerce Solutions" data-fr="Solutions e-commerce">E-commerce Solutions</option>
-                                    <option value="analytics" data-en="Analytics & Insights" data-fr="Analyses et insights">Analytics & Insights</option>
-                                    <option value="mobile" data-en="Mobile Optimization" data-fr="Optimisation mobile">Mobile Optimization</option>
-                                    <option value="security" data-en="Security & Maintenance" data-fr="Sécurité et maintenance">Security & Maintenance</option>
-                                    <option value="consultation" data-en="Free Consultation" data-fr="Consultation gratuite">Free Consultation</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label for="budget" class="block text-gray-700 font-medium mb-2" data-en="Budget Range" data-fr="Gamme de budget">Budget Range</label>
-                                <select id="budget" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-ai-accent">
-                                    <option value="" data-en="Select budget range" data-fr="Sélectionner la gamme de budget">Select budget range</option>
-                                    <option value="5k-10k">$5,000 - $10,000</option>
-                                    <option value="10k-25k">$10,000 - $25,000</option>
-                                    <option value="25k-50k">$25,000 - $50,000</option>
-                                    <option value="50k+" data-en="$50,000+" data-fr="50 000 $ +">$50,000+</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="block text-gray-700 font-medium mb
+                <p class="text-gray-600 mt-4" data-en="Ready to cut costs
