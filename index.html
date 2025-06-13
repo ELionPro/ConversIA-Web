@@ -468,7 +468,12 @@
                 <!-- Contact Form -->
                 <div class="bg-gray-50 rounded-lg p-8">
                     <h3 class="heading-font text-2xl font-bold mb-6" data-en="Send Us a Message" data-fr="Envoyez-nous un message">Send Us a Message</h3>
-                    <form id="contact-form" class="space-y-6">
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                        <input type="hidden" name="access_key" value="3ca3b371-5141-4dfc-bf90-f2879e4bc72e">
+                        <input type="hidden" name="subject" value="New Contact Form Submission from ConversIA Website">
+                        <input type="hidden" name="from_name" value="ConversIA Website">
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2" data-en="First Name" data-fr="Prénom">First Name</label>
@@ -562,7 +567,12 @@
             <h2 class="heading-font text-2xl font-bold mb-6" data-en="Book Your Free Consultation" data-fr="Réservez votre consultation gratuite">Book Your Free Consultation</h2>
             <p class="text-gray-600 mb-6" data-en="Schedule a 30-minute consultation to discuss your business needs and discover how our AI solutions can help you save costs and increase efficiency." data-fr="Planifiez une consultation de 30 minutes pour discuter de vos besoins commerciaux et découvrir comment nos solutions IA peuvent vous aider à économiser des coûts et augmenter l'efficacité.">Schedule a 30-minute consultation to discuss your business needs and discover how our AI solutions can help you save costs and increase efficiency.</p>
             
-            <form id="booking-form" class="space-y-4">
+            <form id="booking-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <input type="hidden" name="access_key" value="3ca3b371-5141-4dfc-bf90-f2879e4bc72e">
+                <input type="hidden" name="subject" value="New Booking Request from ConversIA Website">
+                <input type="hidden" name="from_name" value="ConversIA Website - Booking">
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="booking-name" class="block text-sm font-medium text-gray-700 mb-2" data-en="Full Name" data-fr="Nom complet">Full Name</label>
@@ -742,21 +752,8 @@
             }
         }
         
-        // Form Submissions
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert(currentLanguage === 'en' 
-                ? 'Thank you for your message! We will get back to you within 24 hours.'
-                : 'Merci pour votre message ! Nous vous répondrons dans les 24 heures.');
-        });
-        
-        document.getElementById('booking-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert(currentLanguage === 'en' 
-                ? 'Thank you for booking! We will send you a calendar invite shortly.'
-                : 'Merci pour votre réservation ! Nous vous enverrons une invitation de calendrier sous peu.');
-            closeBookingModal();
-        });
+        // Form Submissions - Web3Forms handles the actual submission
+        // No preventDefault needed - forms will submit naturally to Web3Forms
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
