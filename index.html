@@ -467,7 +467,7 @@
                 
                 <!-- Contact Form -->
                 <div class="bg-gray-50 rounded-lg p-8">
-                    <h3 class="heading-font text-2xl font-bold mb-6" data-en="Send Us a Message" data-fr="Envoyez-nous un message">Send Us a Message</h3>
+                    <h3 class="heading-font text-2xl font-bold mb-6" data-en="Send Us A Message" data-fr="Envoyez-nous un message">Send Us A Message</h3>
                     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
                         <input type="hidden" name="access_key" value="3ca3b371-5141-4dfc-bf90-f2879e4bc72e">
                         <input type="hidden" name="subject" value="New Contact Form Submission from ConversIA Website">
@@ -752,8 +752,22 @@
             }
         }
         
-        // Form Submissions - Web3Forms handles the actual submission
-        // No preventDefault needed - forms will submit naturally to Web3Forms
+        // Form Submissions with validation for "Other" option
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            const serviceSelect = document.getElementById('service');
+            const messageTextarea = document.getElementById('message');
+            
+            // Check if "Other" is selected and message is less than 10 characters
+            if (serviceSelect.value === 'other' && messageTextarea.value.trim().length < 10) {
+                e.preventDefault();
+                alert(currentLanguage === 'en' 
+                    ? 'When selecting "Other", please provide at least 10 characters in your message to help us understand your needs.'
+                    : 'Lors de la sélection "Autre", veuillez fournir au moins 10 caractères dans votre message pour nous aider à comprendre vos besoins.');
+                messageTextarea.focus();
+                return false;
+            }
+            // If validation passes, form will submit naturally to Web3Forms
+        });
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
