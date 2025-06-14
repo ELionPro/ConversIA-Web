@@ -189,6 +189,30 @@
         .close:hover {
             color: #6366F1;
         }
+        
+        /* Language consistency fixes */
+        .lang-consistent {
+            min-height: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-link {
+            min-width: 4rem;
+            text-align: center;
+        }
+        
+        .btn-consistent {
+            min-width: 8rem;
+            white-space: nowrap;
+        }
+        
+        .heading-consistent {
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -201,11 +225,11 @@
                 </a>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#home" class="hover-ai transition duration-300" data-en="Home" data-fr="Accueil">Home</a>
-                <a href="#services" class="hover-ai transition duration-300" data-en="Services" data-fr="Services">Services</a>
-                <a href="#about" class="hover-ai transition duration-300" data-en="About" data-fr="À propos">About</a>
-                <a href="#contact" class="hover-ai transition duration-300" data-en="Contact" data-fr="Contact">Contact</a>
-                <button onclick="openBookingModal()" class="bg-ai-accent text-white px-4 py-2 rounded-full hover:bg-indigo-600 transition duration-300" data-en="Book Consultation" data-fr="Réserver consultation">Book Consultation</button>
+                <a href="#home" class="hover-ai transition duration-300 nav-link" data-en="Home" data-fr="Accueil">Home</a>
+                <a href="#services" class="hover-ai transition duration-300 nav-link" data-en="Services" data-fr="Services">Services</a>
+                <a href="#about" class="hover-ai transition duration-300 nav-link" data-en="About" data-fr="À propos">About</a>
+                <a href="#contact" class="hover-ai transition duration-300 nav-link" data-en="Contact" data-fr="Contact">Contact</a>
+                <button onclick="openBookingModal()" class="bg-ai-accent text-white px-4 py-2 rounded-full hover:bg-indigo-600 transition duration-300 btn-consistent" data-en="Book Consultation" data-fr="Réserver consultation">Book Consultation</button>
                 <div class="flex ml-4">
                     <button id="lang-en" class="lang-toggle bg-ai-accent text-white px-3 py-1 rounded-l-full">EN</button>
                     <button id="lang-fr" class="lang-toggle bg-gray-200 px-3 py-1 rounded-r-full">FR</button>
