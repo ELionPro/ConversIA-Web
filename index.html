@@ -762,6 +762,25 @@
 
   createChat({
     webhookUrl: 'https://conversia-chatbox.onrender.com/webhook/bbf1c741-1ece-44f6-8a2f-c597bb93b18d/chat'
+    mode: 'window',
+    target: '#n8n-chat',
+    showWelcomeScreen: false,
+    loadPreviousSession: true,
+    chatInputKey: 'chatInput',
+    chatSessionKey: 'sessionId',
+    initialMessages: [
+        'Hi! I'm ConversIA Assistant, here to help you explore automation options with ConversIA Solutions. How can I assist you today?',
+        'Would you prefer to continue in English, French, or Spanish?'
+    ],
+    i18n: {
+        en: {
+        title: 'ConversIA Assistant',
+        subtitle: 'Ask me anything about our AI automation services',
+        inputPlaceholder: 'Type your message here...',
+        getStarted: 'Start Conversation',
+        footer: 'Powered by ConversIA'
+        }
+    },
   });
 </script>
 </body>
